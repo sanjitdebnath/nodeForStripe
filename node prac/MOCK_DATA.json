@@ -1,0 +1,65 @@
+[
+    {
+        "id": 2,
+        "first_name": "Ulick",
+        "last_name": "Scrannage",
+        "email": "uscrannage1@fotki.com",
+        "gender": "Male"
+    },
+    {
+        "id": 3,
+        "first_name": "Monty",
+        "last_name": "Ferran",
+        "email": "mferran2@latimes.com",
+        "gender": "Non-binary"
+    },
+    {
+        "id": 4,
+        "first_name": "Kipp",
+        "last_name": "Klemz",
+        "email": "kklemz3@toplist.cz",
+        "gender": "Female"
+    },
+    {
+        "id": 5,
+        "first_name": "Manda",
+        "last_name": "Inkster",
+        "email": "minkster4@nih.gov",
+        "gender": "Female"
+    },
+    {
+        "id": 6,
+        "first_name": "Ardith",
+        "last_name": "Dymocke",
+        "email": "adymocke5@ihg.com",
+        "gender": "Female"
+    },
+    {
+        "id": 7,
+        "first_name": "Steffen",
+        "last_name": "Mabb",
+        "email": "smabb6@trellian.com",
+        "gender": "Polygender"
+    },
+    {
+        "id": 8,
+        "first_name": "Tonia",
+        "last_name": "Clemendot",
+        "email": "tclemendot7@bloglines.com",
+        "gender": "Female"
+    },
+    {
+        "first_name": "sanjit",
+        "last_name": "debnath",
+        "email": "sanjitdebnath9041@gmail.com",
+        "gender": "male",
+        "id": 8
+    },
+    {
+        "first_name": "sanjit",
+        "last_name": "debnath",
+        "email": "sanjitdebnath9041@gmail.com",
+        "gender": "male",
+        "id": 9
+    }
+]

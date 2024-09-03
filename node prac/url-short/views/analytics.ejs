@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    th,
+    td {
+        padding: 7px 10px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+    .anaylytics_detail{
+        width: 70%;
+    }
+
+    .anaylytics_header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .anaylytics_header a button{
+        padding: 5px 7px;
+        cursor: pointer;
+    }
+    .deleteAnalyticBtn{
+        cursor: pointer;
+    }
+
+</style>
+
+<body style="background-color: rgb(58, 58, 58);color:white">
+    <div class="anaylytics_detail">
+        <div class="anaylytics_header">
+            <h1>Anaylytics Detail</h1>
+            <a href="http://localhost:8000/renderRoute/url/get-rendered-form"><button>Generate Short Url</button></a>
+        </div>
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>Id</th>
+                <th>Short Url</th>
+                <th>Redirect Url</th>
+                <th>Total Visited Count</th>
+                <th>Delete Url</th>
+            </tr>
+            <% analytics.forEach((analytic,id)=> { %>
+                <tr>
+                    <td>
+                        <%=id+1 %>
+                    </td>
+                    <td><a href=<%="http://localhost:8000/api/url/" +analytic.shortId %>><%= analytic.shortId %></a>
+                    </td>
+                    <td>
+                        <%=analytic.RedirectUrl %>
+                    </td>
+                    <td>
+                        <%=analytic.visitHistory.length %>
+                    </td>
+                    <td>
+                        <button class="deleteAnalyticBtn" value=<%= analytic.shortId %>>delete</button>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</body>
+<script>
+    const deleteAnalyticBtns= document.querySelectorAll(".deleteAnalyticBtn");
+    deleteAnalyticBtns.forEach(button => {
+        button.addEventListener("click", function() {
+            fetch(`http://localhost:8000/api/url/${this.value}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((response) => response.text())
+            .then((result) => {
+                window.location.reload();
+            })
+            .catch((error) => console.error('Error:', error));
+        });
+    });
+</script>
+</html>
